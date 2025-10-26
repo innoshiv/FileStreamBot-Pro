@@ -54,9 +54,13 @@ from pyrogram.types import BotCommand
 
 async def set_bot_commands():
     commands = [
-        BotCommand("start", "Start the bot and see how it works"),
-        BotCommand("ping", "ping check"),
-        BotCommand("about", "Learn more about this bot")
+        BotCommand("start", "🚀 Launch the bot and explore its features"),
+        BotCommand("ping", "📶 Check the bot's responsiveness"),
+        BotCommand("about", "ℹ️ Discover more about this bot"),
+        BotCommand("status", "📊 View the current status of the bot"),
+        BotCommand("list", "📜 Get a list of all available commands"),
+        BotCommand("dc", "🔗 Disconnect from the bot or service"),
+        BotCommand("subscribe", "🔔 Subscribe to get updates and notifications"),
     ]
     await StreamBot.set_bot_commands(commands)
 
