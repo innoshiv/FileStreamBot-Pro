@@ -152,6 +152,12 @@
       gap: 6px;
       white-space: nowrap;
       flex-shrink: 0;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.7; }
     }
 
     .live-badge::before {
@@ -160,6 +166,12 @@
       height: 6px;
       background: white;
       border-radius: 50%;
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     #file-name {
@@ -618,26 +630,41 @@
       box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
     }
 
-    /* Footer */
+    /* Enhanced Footer */
     footer {
-      background: var(--bg-secondary);
-      padding: 50px 4% 30px;
+      background: linear-gradient(to bottom, var(--bg-secondary), rgba(26, 29, 41, 0.98));
+      padding: 60px 4% 30px;
       border-top: 1px solid var(--border);
-      margin-top: 50px;
+      margin-top: 60px;
       width: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--accent-gradient);
+      opacity: 0.5;
     }
 
     .footer-content {
       max-width: 1600px;
       margin: 0 auto;
       width: 100%;
+      position: relative;
+      z-index: 1;
     }
 
     .footer-grid {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 40px;
-      margin-bottom: 40px;
+      margin-bottom: 50px;
     }
 
     .footer-brand {
@@ -723,43 +750,135 @@
       font-family: 'Space Grotesk', sans-serif;
     }
 
+    /* Enhanced Copyright Section */
     .footer-bottom {
-      padding-top: 24px;
+      padding-top: 30px;
       border-top: 1px solid var(--border);
+      text-align: center;
+      position: relative;
+    }
+
+    .copyright-container {
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      flex-wrap: wrap;
-      gap: 16px;
+      gap: 20px;
     }
 
     .footer-copyright {
-      font-size: 13px;
-      color: var(--text-muted);
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: var(--bg-glass);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .footer-copyright::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--accent-gradient);
+      opacity: 0.1;
+      transition: left 0.5s ease;
+    }
+
+    .footer-copyright:hover::before {
+      left: 0;
+    }
+
+    .footer-copyright i {
+      color: #ef4444;
+      font-size: 12px;
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
     }
 
     .footer-copyright a {
       color: var(--accent-primary);
       text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .footer-copyright a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-gradient);
+      transition: width 0.3s ease;
+    }
+
+    .footer-copyright a:hover::after {
+      width: 100%;
+    }
+
+    .footer-copyright a:hover {
+      text-shadow: 0 0 8px rgba(99, 102, 241, 0.5);
     }
 
     .footer-bottom-links {
       display: flex;
-      gap: 20px;
+      gap: 24px;
       align-items: center;
+      justify-content: center;
       flex-wrap: wrap;
     }
 
     .footer-bottom-links a {
       color: var(--text-secondary);
       text-decoration: none;
-      font-size: 12px;
-      transition: color 0.2s ease;
+      font-size: 13px;
+      transition: all 0.2s ease;
       white-space: nowrap;
+      padding: 8px 16px;
+      border-radius: 20px;
+      background: transparent;
     }
 
     .footer-bottom-links a:hover {
       color: var(--accent-primary);
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    /* Developer Credit Badge */
+    .dev-credit {
+      margin-top: 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+      border: 1px solid var(--accent-primary);
+      border-radius: 30px;
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .dev-credit i {
+      color: var(--accent-primary);
+      font-size: 12px;
     }
 
     /* Toast Notification */
@@ -1022,10 +1141,18 @@
         gap: 28px;
       }
 
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
+      .footer-copyright {
+        font-size: 12px;
+        padding: 10px 20px;
+      }
+
+      .footer-bottom-links {
+        gap: 16px;
+      }
+
+      .footer-bottom-links a {
+        font-size: 12px;
+        padding: 6px 12px;
       }
 
       .toast {
@@ -1118,6 +1245,21 @@
       .footer-cta {
         padding: 12px 20px;
         font-size: 13px;
+      }
+
+      .footer-copyright {
+        font-size: 11px;
+        padding: 8px 16px;
+      }
+
+      .dev-credit {
+        font-size: 10px;
+        padding: 6px 12px;
+      }
+
+      .footer-bottom-links a {
+        font-size: 11px;
+        padding: 4px 8px;
       }
     }
   </style>
@@ -1279,7 +1421,7 @@
               <div class="stat-label">Quality</div>
               <div class="stat-value">
                 <span class="quality-badge">
-                  <i class="fas fa-hd-video"></i>
+                  <i class="fas fa-film"></i>
                   1080p HD
                 </span>
               </div>
@@ -1316,7 +1458,7 @@
       </aside>
     </div>
 
-    <!-- Footer -->
+    <!-- Enhanced Footer -->
     <footer>
       <div class="footer-content">
         <div class="footer-grid">
@@ -1355,14 +1497,22 @@
           </div>
         </div>
 
+        <!-- Enhanced Copyright Section -->
         <div class="footer-bottom">
-          <div class="footer-copyright">
-            © Made with <i class="fa-solid fa-heart"></i> by <a href="https://shivamnox.github.io">ShivamNox</a>. All rights reserved.
-          </div>
-          <div class="footer-bottom-links">
-            <a href="#">Privacy</a>
-            <a href="#">Terms</a>
-            <a href="https://github.com/ShivamNox/FileStreamBot-Pro" target="_blank">GitHub</a>
+          <div class="copyright-container">
+            <div class="footer-copyright">
+              © 2024 Made with <i class="fas fa-heart"></i> by <a href="https://shivamnox.github.io" target="_blank">ShivamNox</a>
+            </div>
+            <div class="footer-bottom-links">
+              <a href="#">Privacy Policy</a>
+              <a href="#">Terms of Service</a>
+              <a href="#">Support</a>
+              <a href="https://github.com/ShivamNox/FileStreamBot-Pro" target="_blank">Source Code</a>
+            </div>
+            <div class="dev-credit">
+              <i class="fas fa-code"></i>
+              Developer Edition
+            </div>
           </div>
         </div>
       </div>
