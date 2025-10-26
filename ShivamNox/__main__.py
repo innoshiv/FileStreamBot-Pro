@@ -61,6 +61,7 @@ async def set_bot_commands():
         BotCommand("list", "📜 Get a list of all available commands"),
         BotCommand("dc", "🔗 Disconnect from the bot or service"),
         BotCommand("subscribe", "🔔 Subscribe to get updates and notifications"),
+        BotCommand("maintainers", "🔗 Disconnect from the bot or service")
     ]
     await StreamBot.set_bot_commands(commands)
 
