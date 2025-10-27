@@ -17,7 +17,7 @@ async def maintainers(b, m):
     except Exception as e:
         await b.send_message(
             chat_id=m.chat.id,
-            text="I am made by [ShivamNox](https://t.me/shivamnox0)",
+            text="I am made by [ShivamNox](https://t.me/shivamnox)",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
@@ -42,7 +42,7 @@ async def follow_user(b,m):
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton("Subscribe ❤️", url=f"https://t.me/shivamnox0")
+                                InlineKeyboardButton("Subscribe ❤️", url=f"https://t.me/innoshiv")
                             ]
                         ]
                     ),
