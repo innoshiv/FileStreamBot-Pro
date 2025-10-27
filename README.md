@@ -53,35 +53,79 @@ Below are the environment variables used by the bot:
 
 ---
 
-## 🧾 Example `.env` File
+## ⚙️ Installation
+
+### 1️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/filestreambot.git
+cd filestreambot
+````
+
+### 2️⃣ Create a Virtual Environment (Recommended)
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
+pip3 install -r requirements.txt
+```
+
+---
+
+## 🧾 Configuration
+
+Create a `.env` file in the project root directory and fill it with your credentials:
 
 ```env
 API_ID=28405636
 API_HASH=52b6dfbaeea988407006cefbea7c2e04
 BOT_TOKEN=your_bot_token_here
 BIN_CHANNEL=-1002044705664
-DATABASE_URL=your_mongodb_url_here
+DATABASE_URL=your_mongodb_connection_url
 OWNER_ID=6713397633
 OWNER_USERNAME=shivamnox
 UPDATES_CHANNEL=hivajoyweb
 ```
 
+> ⚠️ **Important:**
+>
+> * Replace `your_bot_token_here` and other credentials with your actual values.
+> * Never share your bot token or database credentials publicly.
+
 ---
 
-## 🚀 Deployment
+## 🚀 Running the Bot
 
-You can host this bot using:
+To start the bot, run:
 
-* **Heroku**
+```bash
+python3 -m ShivamNox.__main__
+```
+
+If everything is configured correctly, your bot will connect to Telegram and start running.
+
+---
+
+## 💡 Deployment Options
+
+You can deploy this bot on:
+
 * **Render**
+* **Heroku**
 * **Railway**
-* **VPS / Local machine**
+* **VPS / Local Machine**
 
-For Heroku:
+### Heroku Example
 
-1. Fork this repository.
-2. Add the necessary config vars in **Settings → Config Vars**.
-3. Deploy the app.
+1. Push your code to a GitHub repository.
+2. Create a new Heroku app.
+3. Go to **Settings → Config Vars** and add all required variables.
+4. Deploy the app.
 
 ---
 
@@ -89,11 +133,17 @@ For Heroku:
 
 **© ShivamNox**
 Telegram: [@shivamnox](https://t.me/shivamnox)
+GitHub: [github.com/ShivamNox](https://github.com/ShivamNox)
 
 ---
 
 ## 📝 License
 
-This project is for educational purposes only.
-Redistribution or use of API keys shown here publicly is discouraged — replace them with your own credentials.
+This project is for educational and personal use.
+Please use your own API keys and database credentials.
+Redistribution of private tokens is not allowed.
 
+```
+
+Would you like me to add a **Procfile** and **runtime.txt** too, so you can deploy this bot easily on **Heroku** or **Render**?
+```
