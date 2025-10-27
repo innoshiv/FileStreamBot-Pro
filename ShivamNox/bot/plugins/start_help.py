@@ -70,7 +70,7 @@ async def start(b, m):
         except Exception:
             await b.send_message(
                 chat_id=m.chat.id,
-                text="<i>𝓢𝓸𝓶𝓮𝓽𝓱𝓲𝓷𝓰 𝔀𝓮𝓷𝓽 𝔀𝓻𝓸𝓷𝓰</i> <b> <a href='https://t.me/greymatters_bots_discussion'>CLICK HERE FOR SUPPORT </a></b>",
+                text="<i>𝓢𝓸𝓶𝓮𝓽𝓱𝓲𝓷𝓰 𝔀𝓮𝓷𝓽 𝔀𝓻𝓸𝓷𝓰</i> <b> <a href='https://t.me/innoshiv'>CLICK HERE FOR SUPPORT </a></b>",
                 
                 disable_web_page_preview=True)
             return
@@ -88,8 +88,8 @@ I even support channels for effortless sharing. 📡
 ''',
     reply_markup=InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton("☁️ Support", url="https://t.me/hivabytessupport"),
-             InlineKeyboardButton("⚡️ Updates", url="https://t.me/shivamnox0")],
+            [InlineKeyboardButton("☁️ Support", url="https://t.me/innoshiv"),
+             InlineKeyboardButton("⚡️ Updates", url="https://t.me/innoshiv")],
             [InlineKeyboardButton("❓ Help", callback_data="help"),
              InlineKeyboardButton("ℹ️ About", callback_data="about")],
             [InlineKeyboardButton("🧑‍💻 Developer", url="https://t.me/shivamnox")]
@@ -109,7 +109,7 @@ async def on_help_button(client, callback_query: CallbackQuery):
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("☁️ Support", url="https://t.me/hivabytessupport")],
+                [InlineKeyboardButton("☁️ Support", url="https://t.me/innoshiv")],
                 [InlineKeyboardButton("🔙 Back", callback_data="back")]
             ]
         )
@@ -126,7 +126,7 @@ async def on_about_button(client, callback_query: CallbackQuery):
 
 🔹 **Bot Name:** [File Stream Bot](https://t.me/filestream_iibot)  
 🔹 **Library:** [Pyrogram](https://docs.pyrogram.org)  
-🔹 **Server:** [Hivabytes](https://hivabytes.blogspot.com)  
+🔹 **Server:** [Hivabytes](https://hivabytes)  
 🔹 **Language:** [Python3](https://python.org)  
 🔹 **Database:** [MongoDB](https://mongodb.com)  
 👨‍💻 **Developer:** [ShivamNox](https://t.me/shivamnox)
@@ -155,8 +155,8 @@ I even support channels for effortless sharing. 📡
 ''',
         reply_markup=InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("☁️ Support", url="https://t.me/hivabytessupport"),
-                 InlineKeyboardButton("⚡️ Updates", url="https://t.me/shivamnox0")],
+                [InlineKeyboardButton("☁️ Support", url="https://t.me/Innoshiv"),
+                 InlineKeyboardButton("⚡️ Updates", url="https://t.me/innoshiv")],
                 [InlineKeyboardButton("❓ Help", callback_data="help"),
                  InlineKeyboardButton("ℹ️ About", callback_data="about")],
                 [InlineKeyboardButton("🧑‍💻 Developer", url="https://t.me/shivamnox")]
@@ -203,7 +203,7 @@ async def help_handler(bot, message):
         except Exception:
             await bot.send_message(
                 chat_id=message.chat.id,
-                text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ [Support](https://t.me/hivajoygroup).",
+                text="__Sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ Wʀᴏɴɢ. Cᴏɴᴛᴀᴄᴛ ᴍᴇ__ [Support](https://t.me/innoshiv).",
                 disable_web_page_preview=True)
             return
     await message.reply_text(
@@ -214,7 +214,7 @@ async def help_handler(bot, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [InlineKeyboardButton("💁‍♂️ Owner", url="https://t.me/shivamnox")],
-                [InlineKeyboardButton("💥 Source Code", url="https://t.me/shivamnox0")]
+                [InlineKeyboardButton("💥 Source Code", url="https://t.me/innoshiv")]
             ]
         )
     )
