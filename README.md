@@ -142,8 +142,3 @@ GitHub: [github.com/ShivamNox](https://github.com/ShivamNox)
 This project is for educational and personal use.
 Please use your own API keys and database credentials.
 Redistribution of private tokens is not allowed.
-
-```
-
-Would you like me to add a **Procfile** and **runtime.txt** too, so you can deploy this bot easily on **Heroku** or **Render**?
-```
