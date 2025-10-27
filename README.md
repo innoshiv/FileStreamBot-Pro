@@ -82,14 +82,14 @@ pip3 install -r requirements.txt
 Create a `.env` file in the project root directory and fill it with your credentials:
 
 ```env
-API_ID=28405636
-API_HASH=52b6dfbaeea988407006cefbea7c2e04
+API_ID=29876636
+API_HASH=52b6dfbaee00000000cefbea7c2e04
 BOT_TOKEN=your_bot_token_here
 BIN_CHANNEL=-1002044705664
 DATABASE_URL=your_mongodb_connection_url
-OWNER_ID=6713397633
-OWNER_USERNAME=shivamnox
-UPDATES_CHANNEL=hivajoyweb
+OWNER_ID=Owner_id
+OWNER_USERNAME=Username
+UPDATES_CHANNEL=channel_username
 ```
 
 > ⚠️ **Important:**
