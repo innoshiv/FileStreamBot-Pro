@@ -32,9 +32,9 @@ class Var(object):
     FQDN = str(getenv('FQDN', '0.0.0.0:3000')) if not ON_HEROKU or getenv('FQDN', '0.0.0.0:3000') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL',False))
     if HAS_SSL:
-        URL = "https://yourdomain.com/".format(FQDN) #Required
+        URL = "https://filestreambot-pro-js53.onrender.com".format(FQDN) #Required
     else:
-        URL = "https://yourdomain.com/".format(FQDN) #Required
+        URL = "https://filestreambot-pro-js53.onrender.com".format(FQDN) #Required
     DATABASE_URL = str(getenv('DATABASE_URL', ' ')) #Required
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', ' ')) #Required
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "-1001362659779")).split())) #Leave as it is.
